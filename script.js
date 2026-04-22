@@ -23,11 +23,16 @@ const favoritesList = document.getElementById('favorites-list');
 const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 renderFavorites();
 
-// Event listener for search button
+// Add event listener to display artist name in a result div
 searchButton.addEventListener('click', () => {
-    const artistName = searchInput.value.trim();
+    const artistName = searchInput.value.trim(); // Get the artist name from the input field
+
     if (artistName) {
-        searchArtists(artistName);
+        // Display the artist name inside a result div
+        artistContainer.innerHTML = `<div class="artist-card"><h2>${artistName}</h2></div>`;
+    } else {
+        // Clear the container if input is empty
+        artistContainer.innerHTML = '';
     }
 });
 
