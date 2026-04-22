@@ -23,15 +23,16 @@ const favoritesList = document.getElementById('favorites-list');
 const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 renderFavorites();
 
-// Add event listener to display artist name in a result div
-searchButton.addEventListener('click', () => {
-    const artistName = searchInput.value.trim(); // Get the artist name from the input field
+// Ensure no duplicate search bars or overlays
+// Removed unnecessary modal display logic on page load
+artistModal.hidden = true; // Ensure modal is hidden by default
 
+// Simplified search button logic to avoid duplicate event listeners
+searchButton.addEventListener('click', () => {
+    const artistName = searchInput.value.trim();
     if (artistName) {
-        // Display the artist name inside a result div
         artistContainer.innerHTML = `<div class="artist-card"><h2>${artistName}</h2></div>`;
     } else {
-        // Clear the container if input is empty
         artistContainer.innerHTML = '';
     }
 });

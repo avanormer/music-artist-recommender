@@ -14,44 +14,25 @@
     </header>
 
     <main>
+        <!-- Search Section -->
         <section id="search-section">
-            <input type="text" id="artist-search" placeholder="Enter artist name">
-            <button id="search-button">Search</button>
+            <input id="artistInput" type="text" placeholder="Enter artist name">
+            <button onclick="searchArtist()">Search</button>
         </section>
 
-        <section id="messages">
-            <p id="loading-message" hidden>Loading...</p>
-            <p id="error-message" hidden>Error: Unable to fetch artist data.</p>
+        <!-- Results Section -->
+        <section id="result">
+            <!-- Results will be dynamically rendered here -->
         </section>
 
-        <section id="artist-container">
-            <!-- Artist cards will be dynamically rendered here -->
-        </section>
-
-        <!-- Added Favorites Section -->
-        <section id="favorites-container" hidden>
+        <!-- Favorites Section -->
+        <section id="favorites-container">
             <h2>Favorite Artists</h2>
             <div id="favorites-list">
                 <!-- Favorite artist cards will be dynamically rendered here -->
             </div>
         </section>
-
-        <section>
-            <input id="artistInput" type="text" placeholder="Enter artist name">
-            <button onclick="searchArtist()">Search</button>
-        </section>
-
-        <div id="result"></div>
     </main>
-
-    <div id="artist-modal" hidden>
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <div id="modal-details">
-                <!-- Artist details will be dynamically rendered here -->
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
